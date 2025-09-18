@@ -94,10 +94,11 @@
           <p class="muted">I will be conducting research in Louisiana in October — recruiting participants, running interviews, and piloting the prototype app with local public defense partners. If you'd like to be notified when participant recruitment opens, join the mailing list below.</p>
 
           <h3 style="margin-top:16px;color:var(--accent)">Get involved</h3>
-          <div class="links">
-            <a class="small" id="mailingLink" href="https://docs.google.com/forms/d/e/1FAIpQLSfJ6zE15yjWxiVAIlWrsYSiohaYg0SyULwoJEn38GfcibFWkw/viewform?usp=header" target="_blank">Join mailing list (Google Form)</a>
-            <a class="small" id="feedbackLink" href="https://docs.google.com/forms/d/e/1FAIpQLScbpXkPSTIDe14hnyTlv1CKERtNOZgNf1UHE6RBr6lmT0IFRw/viewform?usp=header" target="_blank">Give feedback or ask a question (Google Form)</a>
+          <div class="links" style="display:flex;flex-direction:column;gap:14px;margin-top:8px">
+            <a class="btn" id="mailingLink" href="https://docs.google.com/forms/d/e/1FAIpQLSfJ6zE15yjWxiVAIlWrsYSiohaYg0SyULwoJEn38GfcibFWkw/viewform?usp=header" target="_blank" style="padding:14px 18px;font-size:16px;">Join CourtClarity Mailing List</a>
+            <a class="btn" id="feedbackLink" href="https://docs.google.com/forms/d/e/1FAIpQLScbpXkPSTIDe14hnyTlv1CKERtNOZgNf1UHE6RBr6lmT0IFRw/viewform?usp=header" target="_blank" style="padding:14px 18px;font-size:16px;">Give Feedback or Ask a Question</a>
           </div>
+
 
           <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
 
@@ -124,28 +125,29 @@
             <a class="btn" href="https://apps.apple.com/placeholder" target="_blank">App Store (soon)</a>
           </div>
 
-          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
-
-          <h3 style="color:var(--accent)">Share this poster</h3>
-          <p class="muted">Use the QR code below to link directly to this site. The QR shown on the poster should point to the published GitHub Pages URL.</p>
-
+          <h3 style="color:var(--accent)">View CourtClarity Research Poster</h3>
+          <p class="muted">Scan the QR code below to visit this page, or download the poster PDF directly.</p>
+          
           <div class="qr-wrap">
             <div id="qrcode"></div>
             <div class="hint">Scan to open: <span id="siteUrl">https://your-username.github.io/courtclarity</span></div>
-            <button id="downloadQr" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download QR (PNG)</button>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+              <button id="downloadQr" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download QR (PNG)</button>
+              <a href="CourtClarityPoster.pdf" target="_blank" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download Poster (PDF)</a>
+            </div>
           </div>
-        </div>
+
 
         <div class="card" style="margin-top:16px;background:var(--accent-soft)">
           <h3 style="margin-top:0;color:var(--accent)">Contact</h3>
           <p class="muted">Zoie Geronimi</p>
-          <p class="small">Email: zoie.geronimi@gmail.com <a style="color:inherit;text-decoration:underline" href="mailto:zoie@example.com">zoie@example.com</a></p>
+          <p class="small">Email: zoie.geronimi@gmail.com <a style="color:inherit;text-decoration:underline" href="mailto:zoie.geronimi@gmail.com"></a></p>
         </div>
       </aside>
     </div>
 
     <footer>
-      Built with ❤️ for public-interest tech. Replace placeholders (forms, app links, repo) before publishing.
+      Zoie to update footer eventually
     </footer>
   </div>
 
@@ -191,9 +193,8 @@
     });
 
     document.getElementById('appBtn').href = 'https://apps.apple.com/placeholder';
-    document.getElementById('mailingLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_MAILING_FORM';
-    document.getElementById('feedbackLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_FEEDBACK_FORM';
-    document.getElementById('repoLink').href = 'https://github.com/your-username/courtclarity';
+    document.getElementById('mailingLink').href = 'https://docs.google.com/forms/d/e/1FAIpQLSfJ6zE15yjWxiVAIlWrsYSiohaYg0SyULwoJEn38GfcibFWkw/viewform?usp=header';
+    document.getElementById('feedbackLink').href = 'https://docs.google.com/forms/d/e/1FAIpQLScbpXkPSTIDe14hnyTlv1CKERtNOZgNf1UHE6RBr6lmT0IFRw/viewform?usp=header';
   </script>
 </body>
 </html>
