@@ -10,47 +10,58 @@
   <meta name="description" content="CourtClarity — bridging the justice divide. Project updates, app links, research timeline, and ways to join the mailing list or leave feedback." />
   <style>
     :root{
-      --bg: #0f1724; /* deep neutral */
+      --bg: #0f1724;
       --card: #0b1220;
       --muted: #94a3b8;
-      --accent: #7c3aed; /* purple */
+      --accent: #7c3aed;
       --glass: rgba(255,255,255,0.04);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #071a2b 60%);color:#e6eef8}
-    .container{max-width:980px;margin:36px auto;padding:28px}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #071a2b 60%);color:#e6eef8;scroll-behavior:smooth}
+    .container{max-width:980px;margin:36px auto;padding:28px;animation: fadeIn 1s ease}
 
-    header{display:flex;align-items:center;gap:18px}
-    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:22px}
-    h1{margin:0;font-size:28px}
-    p.lead{color:var(--muted);margin-top:6px}
+    header{display:flex;align-items:center;gap:18px;transition:transform 0.3s}
+    header:hover{transform:scale(1.02)}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:22px;transition:transform 0.3s}
+    .logo:hover{transform:rotate(8deg) scale(1.1)}
+
+    h1{margin:0;font-size:28px;animation: slideIn 0.6s ease}
+    p.lead{color:var(--muted);margin-top:6px;animation: slideIn 0.8s ease}
 
     .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
-    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.6);}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.6);transition:transform 0.3s, box-shadow 0.3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(2,6,23,0.8)}
     .muted{color:var(--muted);font-size:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;text-decoration:none;font-weight:600}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;text-decoration:none;font-weight:600;transition:all 0.3s}
+    .btn:hover{background:linear-gradient(90deg,#4f46e5,var(--accent));transform:scale(1.05)}
+    .btn:active{transform:scale(0.95)}
 
-    .updates{max-height:280px;overflow:auto;padding-right:8px}
-    .update{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .updates{max-height:280px;overflow:auto;padding-right:8px;animation: fadeInUp 1s ease}
+    .update{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.3s}
+    .update:hover{background:rgba(255,255,255,0.03)}
     .when{color:var(--muted);font-size:13px}
 
     .links{display:flex;flex-direction:column;gap:10px}
-    .small{font-size:13px;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted);transition:color 0.3s}
+    .small:hover{color:#fff}
 
-    /* QR area */
-    .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
-    #qrcode{background:transparent;padding:8px;border-radius:8px}
+    .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;animation: fadeInUp 1s ease}
+    #qrcode img{transition:transform 0.3s}
+    #qrcode img:hover{transform:scale(1.05)}
     .hint{font-size:13px;color:var(--muted);text-align:center}
 
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;animation: fadeIn 1.2s ease}
 
-    /* responsive */
     @media (max-width:920px){
       .grid{grid-template-columns:1fr;}
       .card{padding:14px}
       header{gap:12px}
     }
+
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
   </style>
 </head>
 <body>
@@ -89,10 +100,7 @@
           <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
 
           <h3 id="updates">Latest updates</h3>
-          <div class="updates" id="updatesList">
-            <!-- JS will populate recent updates -->
-          </div>
-
+          <div class="updates" id="updatesList"></div>
         </section>
 
         <section class="card" style="margin-top:16px">
@@ -105,7 +113,6 @@
           </ul>
           <p class="small" style="margin-top:12px">Want this timeline added to your calendar? Use the mailing list link to request an invite.</p>
         </section>
-
       </main>
 
       <aside>
@@ -127,7 +134,6 @@
             <div class="hint">Scan to open: <span id="siteUrl">https://your-username.github.io/courtclarity</span></div>
             <button id="downloadQr" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Download QR (PNG)</button>
           </div>
-
         </div>
 
         <div class="card" style="margin-top:16px">
@@ -143,17 +149,8 @@
     </footer>
   </div>
 
-  <!-- QRCode generator library (lightweight) -->
   <script>
-    /*
-      Minimal QR code generator (tiny implementation of kjua-like behavior)
-      This inlined code uses Canvas + the QRious algorithm via a compact function.
-      If you prefer, replace with an external library (qrcodejs) or a raster image.
-    */
-
-    // Helper: simple QR via Google Chart API fallback (fast and reliable)
     function makeQRCode(url, size){
-      // Prefer client-side canvas generation when possible, but Google Chart is easiest for a static PNG.
       const encoded = encodeURIComponent(url);
       const google = `https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${encoded}&chld=L|1`;
       const img = document.createElement('img');
@@ -165,15 +162,12 @@
       return img;
     }
 
-    // Config — change SITE_URL if you publish somewhere else
     const SITE_URL = 'https://your-username.github.io/courtclarity';
     document.getElementById('siteUrl').textContent = SITE_URL;
     document.getElementById('qrcode').appendChild(makeQRCode(SITE_URL, 220));
 
-    // Download QR button -> fetch the image and download it as png
     document.getElementById('downloadQr').addEventListener('click', async function(){
       const url = `https://chart.googleapis.com/chart?cht=qr&chs=440x440&chl=${encodeURIComponent(SITE_URL)}&chld=L|1`;
-      // Download
       const a = document.createElement('a');
       a.href = url;
       a.download = 'courtclarity-qr.png';
@@ -182,27 +176,24 @@
       a.remove();
     });
 
-    // Populate updates (this keeps HTML static but easy to update via GitHub)
     const updates = [
       {when:'Sep 18, 2025', text:'Initial poster & GitHub Pages site live (placeholder content).'},
       {when:'Oct 01, 2025', text:'Begin fieldwork in Louisiana: participant recruitment & pilot testing.'},
       {when:'Oct 20, 2025', text:'Preliminary analysis and app UX iteration.'}
     ];
     const uEl = document.getElementById('updatesList');
-    updates.forEach(u=>{
+    updates.forEach((u,i)=>{
       const div = document.createElement('div'); div.className='update';
+      div.style.animation = `fadeInUp 0.6s ease ${i*0.2}s forwards`;
+      div.style.opacity = 0;
       div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:flex-start"><div style="max-width:74%"><div style=\"font-weight:600\">${u.text}</div><div class=\"muted\" style=\"margin-top:6px\">${u.when}</div></div></div>`;
       uEl.appendChild(div);
     });
 
-    // Buttons: replace placeholders with real links if you already have them
     document.getElementById('appBtn').href = 'https://apps.apple.com/placeholder';
     document.getElementById('mailingLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_MAILING_FORM';
     document.getElementById('feedbackLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_FEEDBACK_FORM';
     document.getElementById('repoLink').href = 'https://github.com/your-username/courtclarity';
-
-    // Small UX: prefer HTTPS protocol if site is served from a custom domain
-    // When you publish on GitHub Pages, update SITE_URL to your published URL.
   </script>
 </body>
 </html>
