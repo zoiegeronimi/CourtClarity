@@ -10,41 +10,42 @@
   <meta name="description" content="CourtClarity — bridging the justice divide. Project updates, app links, research timeline, and ways to join the mailing list or leave feedback." />
   <style>
     :root{
-      --bg: #0f1724;
-      --card: #0b1220;
-      --muted: #94a3b8;
-      --accent: #7c3aed;
-      --glass: rgba(255,255,255,0.04);
+      --bg: #ffffff;
+      --card: #FFE6C6;
+      --muted: #555555;
+      --accent: #BD9B16; /* gold */
+      --accent-light: #BDD9FB; /* light blue */
+      --accent-soft: #D9E7CC; /* soft green */
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #071a2b 60%);color:#e6eef8;scroll-behavior:smooth}
+    html,body{height:100%;margin:0;background:var(--bg);color:#222;scroll-behavior:smooth}
     .container{max-width:980px;margin:36px auto;padding:28px;animation: fadeIn 1s ease}
 
     header{display:flex;align-items:center;gap:18px;transition:transform 0.3s}
     header:hover{transform:scale(1.02)}
-    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:22px;transition:transform 0.3s}
-    .logo:hover{transform:rotate(8deg) scale(1.1)}
+    .logo{width:72px;height:72px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+    .logo img{width:100%;height:100%;object-fit:cover}
 
     h1{margin:0;font-size:28px;animation: slideIn 0.6s ease}
     p.lead{color:var(--muted);margin-top:6px;animation: slideIn 0.8s ease}
 
     .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
-    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.6);transition:transform 0.3s, box-shadow 0.3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(2,6,23,0.8)}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.1);transition:transform 0.3s, box-shadow 0.3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,0.15)}
     .muted{color:var(--muted);font-size:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;text-decoration:none;font-weight:600;transition:all 0.3s}
-    .btn:hover{background:linear-gradient(90deg,#4f46e5,var(--accent));transform:scale(1.05)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-light));color:white;text-decoration:none;font-weight:600;transition:all 0.3s}
+    .btn:hover{background:linear-gradient(90deg,var(--accent-light),var(--accent));transform:scale(1.05)}
     .btn:active{transform:scale(0.95)}
 
     .updates{max-height:280px;overflow:auto;padding-right:8px;animation: fadeInUp 1s ease}
-    .update{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03);transition:background 0.3s}
-    .update:hover{background:rgba(255,255,255,0.03)}
+    .update{padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.05);transition:background 0.3s}
+    .update:hover{background:rgba(0,0,0,0.03)}
     .when{color:var(--muted);font-size:13px}
 
     .links{display:flex;flex-direction:column;gap:10px}
     .small{font-size:13px;color:var(--muted);transition:color 0.3s}
-    .small:hover{color:#fff}
+    .small:hover{color:#000}
 
     .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;animation: fadeInUp 1s ease}
     #qrcode img{transition:transform 0.3s}
@@ -67,7 +68,9 @@
 <body>
   <div class="container">
     <header>
-      <div class="logo">CC</div>
+      <div class="logo">
+        <img src="CourtClarityLogo.jpeg" alt="CourtClarity logo">
+      </div>
       <div>
         <h1>CourtClarity</h1>
         <p class="lead">Bridging the justice divide — research updates, app progress, and opportunities to join & give feedback.</p>
@@ -77,34 +80,34 @@
     <div class="grid">
       <main>
         <section class="card">
-          <h2 style="margin-top:0">About the project</h2>
+          <h2 style="margin-top:0;color:var(--accent)">About the project</h2>
           <p class="muted">CourtClarity uses human-centered design and language-model assistance to empower defendants with plain-language explanations, rights checklists, and easy access to resources. This site will host research updates, links to the app (App Store & Play), and ways to get involved.</p>
 
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
 
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
             <a id="appBtn" class="btn" href="#" target="_blank">Open on App Store (placeholder)</a>
-            <a class="btn" href="#updates" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">See Research Updates</a>
+            <a class="btn" href="#updates" style="background:var(--accent-soft);color:#222">See Research Updates</a>
           </div>
 
-          <h3 style="margin-top:18px">Upcoming fieldwork</h3>
+          <h3 style="margin-top:18px;color:var(--accent)">Upcoming fieldwork</h3>
           <p class="muted">I will be conducting research in Louisiana in October — recruiting participants, running interviews, and piloting the prototype app with local public defense partners. If you'd like to be notified when participant recruitment opens, join the mailing list below.</p>
 
-          <h3 style="margin-top:16px">Get involved</h3>
+          <h3 style="margin-top:16px;color:var(--accent)">Get involved</h3>
           <div class="links">
             <a class="small" id="mailingLink" href="https://forms.gle/REPLACE_WITH_YOUR_MAILING_FORM" target="_blank">Join mailing list (Google Form)</a>
             <a class="small" id="feedbackLink" href="https://forms.gle/REPLACE_WITH_YOUR_FEEDBACK_FORM" target="_blank">Give feedback or ask a question (Google Form)</a>
             <a class="small" id="repoLink" href="https://github.com/your-username/courtclarity" target="_blank">View source & updates on GitHub</a>
           </div>
 
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
 
-          <h3 id="updates">Latest updates</h3>
+          <h3 id="updates" style="color:var(--accent)">Latest updates</h3>
           <div class="updates" id="updatesList"></div>
         </section>
 
-        <section class="card" style="margin-top:16px">
-          <h3 style="margin-top:0">Research timeline</h3>
+        <section class="card" style="margin-top:16px;background:var(--accent-soft)">
+          <h3 style="margin-top:0;color:var(--accent)">Research timeline</h3>
           <p class="muted">Key dates and milestones. (Replace placeholders with real dates.)</p>
           <ul class="small" style="line-height:1.6">
             <li><strong>Oct 2025</strong> — Fieldwork in Louisiana: interviews & pilot testing.</li>
@@ -116,28 +119,28 @@
       </main>
 
       <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Quick actions</h3>
+        <div class="card" style="background:var(--accent-light)">
+          <h3 style="margin-top:0;color:var(--accent)">Quick actions</h3>
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
             <a class="btn" href="https://apps.apple.com/placeholder" target="_blank">App Store (soon)</a>
             <a class="btn" href="https://play.google.com/store/apps/placeholder" target="_blank">Google Play (soon)</a>
-            <a class="btn" href="https://github.com/your-username/courtclarity/releases" target="_blank" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Releases & changelog</a>
+            <a class="btn" href="https://github.com/your-username/courtclarity/releases" target="_blank" style="background:#fff;border:1px solid #ddd;color:var(--muted);">Releases & changelog</a>
           </div>
 
-          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
 
-          <h3>Share this poster</h3>
+          <h3 style="color:var(--accent)">Share this poster</h3>
           <p class="muted">Use the QR code below to link directly to this site. The QR shown on the poster should point to the published GitHub Pages URL.</p>
 
           <div class="qr-wrap">
             <div id="qrcode"></div>
             <div class="hint">Scan to open: <span id="siteUrl">https://your-username.github.io/courtclarity</span></div>
-            <button id="downloadQr" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Download QR (PNG)</button>
+            <button id="downloadQr" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download QR (PNG)</button>
           </div>
         </div>
 
-        <div class="card" style="margin-top:16px">
-          <h3 style="margin-top:0">Contact</h3>
+        <div class="card" style="margin-top:16px;background:var(--accent-soft)">
+          <h3 style="margin-top:0;color:var(--accent)">Contact</h3>
           <p class="muted">Zoie Geronimi — Columbia University</p>
           <p class="small">Email: <a style="color:inherit;text-decoration:underline" href="mailto:zoie@example.com">zoie@example.com</a></p>
         </div>
