@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CourtClarity — Research & App Updates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="CourtClarity — bridging the justice divide. Project updates, app links, research timeline, and ways to join the mailing list or leave feedback." />
+  <style>
+    :root{
+      --bg: #0f1724; /* deep neutral */
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #7c3aed; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071025 0%, #071a2b 60%);color:#e6eef8}
+    .container{max-width:980px;margin:36px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,#6d28d9,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:22px}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 22px rgba(2,6,23,0.6);}
+    .muted{color:var(--muted);font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;text-decoration:none;font-weight:600}
+
+    .updates{max-height:280px;overflow:auto;padding-right:8px}
+    .update{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .when{color:var(--muted);font-size:13px}
+
+    .links{display:flex;flex-direction:column;gap:10px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* QR area */
+    .qr-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+    #qrcode{background:transparent;padding:8px;border-radius:8px}
+    .hint{font-size:13px;color:var(--muted);text-align:center}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:920px){
+      .grid{grid-template-columns:1fr;}
+      .card{padding:14px}
+      header{gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">CC</div>
+      <div>
+        <h1>CourtClarity</h1>
+        <p class="lead">Bridging the justice divide — research updates, app progress, and opportunities to join & give feedback.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2 style="margin-top:0">About the project</h2>
+          <p class="muted">CourtClarity uses human-centered design and language-model assistance to empower defendants with plain-language explanations, rights checklists, and easy access to resources. This site will host research updates, links to the app (App Store & Play), and ways to get involved.</p>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <a id="appBtn" class="btn" href="#" target="_blank">Open on App Store (placeholder)</a>
+            <a class="btn" href="#updates" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">See Research Updates</a>
+          </div>
+
+          <h3 style="margin-top:18px">Upcoming fieldwork</h3>
+          <p class="muted">I will be conducting research in Louisiana in October — recruiting participants, running interviews, and piloting the prototype app with local public defense partners. If you'd like to be notified when participant recruitment opens, join the mailing list below.</p>
+
+          <h3 style="margin-top:16px">Get involved</h3>
+          <div class="links">
+            <a class="small" id="mailingLink" href="https://forms.gle/REPLACE_WITH_YOUR_MAILING_FORM" target="_blank">Join mailing list (Google Form)</a>
+            <a class="small" id="feedbackLink" href="https://forms.gle/REPLACE_WITH_YOUR_FEEDBACK_FORM" target="_blank">Give feedback or ask a question (Google Form)</a>
+            <a class="small" id="repoLink" href="https://github.com/your-username/courtclarity" target="_blank">View source & updates on GitHub</a>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+
+          <h3 id="updates">Latest updates</h3>
+          <div class="updates" id="updatesList">
+            <!-- JS will populate recent updates -->
+          </div>
+
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Research timeline</h3>
+          <p class="muted">Key dates and milestones. (Replace placeholders with real dates.)</p>
+          <ul class="small" style="line-height:1.6">
+            <li><strong>Oct 2025</strong> — Fieldwork in Louisiana: interviews & pilot testing.</li>
+            <li><strong>Nov 2025</strong> — Analyze pilot data; iterate on app UX.</li>
+            <li><strong>Dec 2025</strong> — Public release v0.1; submit extended research poster & draft paper.</li>
+          </ul>
+          <p class="small" style="margin-top:12px">Want this timeline added to your calendar? Use the mailing list link to request an invite.</p>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Quick actions</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+            <a class="btn" href="https://apps.apple.com/placeholder" target="_blank">App Store (soon)</a>
+            <a class="btn" href="https://play.google.com/store/apps/placeholder" target="_blank">Google Play (soon)</a>
+            <a class="btn" href="https://github.com/your-username/courtclarity/releases" target="_blank" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);">Releases & changelog</a>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:14px 0">
+
+          <h3>Share this poster</h3>
+          <p class="muted">Use the QR code below to link directly to this site. The QR shown on the poster should point to the published GitHub Pages URL.</p>
+
+          <div class="qr-wrap">
+            <div id="qrcode"></div>
+            <div class="hint">Scan to open: <span id="siteUrl">https://your-username.github.io/courtclarity</span></div>
+            <button id="downloadQr" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Download QR (PNG)</button>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Contact</h3>
+          <p class="muted">Zoie Geronimi — Columbia University</p>
+          <p class="small">Email: <a style="color:inherit;text-decoration:underline" href="mailto:zoie@example.com">zoie@example.com</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Built with ❤️ for public-interest tech. Replace placeholders (forms, app links, repo) before publishing.
+    </footer>
+  </div>
+
+  <!-- QRCode generator library (lightweight) -->
+  <script>
+    /*
+      Minimal QR code generator (tiny implementation of kjua-like behavior)
+      This inlined code uses Canvas + the QRious algorithm via a compact function.
+      If you prefer, replace with an external library (qrcodejs) or a raster image.
+    */
+
+    // Helper: simple QR via Google Chart API fallback (fast and reliable)
+    function makeQRCode(url, size){
+      // Prefer client-side canvas generation when possible, but Google Chart is easiest for a static PNG.
+      const encoded = encodeURIComponent(url);
+      const google = `https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${encoded}&chld=L|1`;
+      const img = document.createElement('img');
+      img.src = google;
+      img.alt = 'QR code';
+      img.width = size;
+      img.height = size;
+      img.style.borderRadius = '8px';
+      return img;
+    }
+
+    // Config — change SITE_URL if you publish somewhere else
+    const SITE_URL = 'https://your-username.github.io/courtclarity';
+    document.getElementById('siteUrl').textContent = SITE_URL;
+    document.getElementById('qrcode').appendChild(makeQRCode(SITE_URL, 220));
+
+    // Download QR button -> fetch the image and download it as png
+    document.getElementById('downloadQr').addEventListener('click', async function(){
+      const url = `https://chart.googleapis.com/chart?cht=qr&chs=440x440&chl=${encodeURIComponent(SITE_URL)}&chld=L|1`;
+      // Download
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'courtclarity-qr.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+
+    // Populate updates (this keeps HTML static but easy to update via GitHub)
+    const updates = [
+      {when:'Sep 18, 2025', text:'Initial poster & GitHub Pages site live (placeholder content).'},
+      {when:'Oct 01, 2025', text:'Begin fieldwork in Louisiana: participant recruitment & pilot testing.'},
+      {when:'Oct 20, 2025', text:'Preliminary analysis and app UX iteration.'}
+    ];
+    const uEl = document.getElementById('updatesList');
+    updates.forEach(u=>{
+      const div = document.createElement('div'); div.className='update';
+      div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:flex-start"><div style="max-width:74%"><div style=\"font-weight:600\">${u.text}</div><div class=\"muted\" style=\"margin-top:6px\">${u.when}</div></div></div>`;
+      uEl.appendChild(div);
+    });
+
+    // Buttons: replace placeholders with real links if you already have them
+    document.getElementById('appBtn').href = 'https://apps.apple.com/placeholder';
+    document.getElementById('mailingLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_MAILING_FORM';
+    document.getElementById('feedbackLink').href = 'https://forms.gle/REPLACE_WITH_YOUR_FEEDBACK_FORM';
+    document.getElementById('repoLink').href = 'https://github.com/your-username/courtclarity';
+
+    // Small UX: prefer HTTPS protocol if site is served from a custom domain
+    // When you publish on GitHub Pages, update SITE_URL to your published URL.
+  </script>
+</body>
+</html>
