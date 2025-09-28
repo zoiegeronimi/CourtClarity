@@ -54,6 +54,29 @@
 
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;animation: fadeIn 1.2s ease}
 
+    /* Timeline styles */
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline li {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .timeline .date {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .timeline .desc {
+      margin-left: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     @media (max-width:920px){
       .grid{grid-template-columns:1fr;}
       .card{padding:14px}
@@ -98,21 +121,41 @@
             <a class="btn" id="feedbackLink" href="https://docs.google.com/forms/d/e/1FAIpQLScbpXkPSTIDe14hnyTlv1CKERtNOZgNf1UHE6RBr6lmT0IFRw/viewform?usp=header" target="_blank" style="padding:14px 18px;font-size:16px;">Give Feedback or Ask a Question</a>
           </div>
 
-
           <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:14px 0">
         </section>
 
         <section class="card" style="margin-top:16px;background:var(--accent-soft)">
           <h3 style="margin-top:0;color:var(--accent)">Research timeline</h3>
-          <p class="muted">Key dates and milestones. (Replace placeholders with real dates.)</p>
-          <ul class="small" style="line-height:1.6">
-            <li><strong>September 2025</strong> — Shared the initial draft of Court Clarity with AFAM department peers, mentors, and constables and public defenders in Baton Rouge and New Orleans for feedback.</li>
-            <li><strong>Oct 2025</strong> — Public launch of Court Clarity for users in Baton Rouge and New Orleans, Louisiana.</li>
-            <li><strong>Oct 2025</strong> — Initiated collection of pre-arraignment survey data with users in Baton Rouge and New Orleans.</li>
-            <li><strong>Nov 2025</strong> — Begin post-arraignment data collection and conduct in-person interviews.</li>
-            <li><strong>Dec 2025</strong> — Complete post-arraignment data collection and finalize interview transcript preparation.</li>
-            <li><strong>Spring 2026</strong> — Conduct data analysis and draft thesis.</li>
-            <li><strong>Spring 2026</strong> — Present and defend thesis findings.</li>
+          <p class="muted">Key dates and milestones</p>
+          <ul class="timeline">
+            <li>
+              <div class="date">September 2025</div>
+              <div class="desc">Shared the initial draft of Court Clarity with AFAM department peers, mentors, and constables and public defenders in Baton Rouge and New Orleans for feedback.</div>
+            </li>
+            <li>
+              <div class="date">Oct 2025</div>
+              <div class="desc">Public launch of Court Clarity for users in Baton Rouge and New Orleans, Louisiana.</div>
+            </li>
+            <li>
+              <div class="date">Oct 2025</div>
+              <div class="desc">Initiated collection of pre-arraignment survey data with users in Baton Rouge and New Orleans.</div>
+            </li>
+            <li>
+              <div class="date">Nov 2025</div>
+              <div class="desc">Begin post-arraignment data collection and conduct in-person interviews.</div>
+            </li>
+            <li>
+              <div class="date">Dec 2025</div>
+              <div class="desc">Complete post-arraignment data collection and finalize interview transcript preparation.</div>
+            </li>
+            <li>
+              <div class="date">Spring 2026</div>
+              <div class="desc">Conduct data analysis and draft thesis.</div>
+            </li>
+            <li>
+              <div class="date">Spring 2026</div>
+              <div class="desc">Present and defend thesis findings.</div>
+            </li>
           </ul>
           <p class="small" style="margin-top:12px">Want this timeline added to your calendar? Use the mailing list link to request an invite.</p>
         </section>
@@ -149,4 +192,3 @@
   </script>
 </body>
 </html>
-
