@@ -136,32 +136,12 @@
     </div>
 
     <footer>
-      Zoie to update footer eventually
+      2025 Court Clarity - Zoie Geronimi
     </footer>
   </div>
 
   <script>
-    function makeQRCode(url, size){
-      const encoded = encodeURIComponent(url);
-      const google = `https://chart.googleapis.com/chart?cht=qr&chs=${size}x${size}&chl=${encoded}&chld=L|1`;
-      const img = document.createElement('img');
-      img.src = google;
-      img.alt = 'QR code';
-      img.width = size;
-      img.height = size;
-      img.style.borderRadius = '8px';
-      return img;
-    }
 
-    const SITE_URL = 'https://your-username.github.io/courtclarity';
-    document.getElementById('qrcode').appendChild(makeQRCode(SITE_URL, 220));
-
-    const updates = [
-      {when:'Sep 18, 2025', text:'Initial poster & GitHub Pages site live (placeholder content).'},
-      {when:'Oct 01, 2025', text:'Begin fieldwork in Louisiana: participant recruitment & pilot testing.'},
-      {when:'Oct 20, 2025', text:'Preliminary analysis and app UX iteration.'}
-    ];
-    // Add updates list if needed in HTML
   </script>
 </body>
 </html>
