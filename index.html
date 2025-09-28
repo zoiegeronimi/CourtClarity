@@ -117,18 +117,15 @@
       <aside>
         <div class="card" style="background:var(--accent-light)">
           <h3 style="margin-top:0;color:var(--accent)">View CourtClarity Research Poster</h3>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-          </div>
-
-          <p class="muted">Update text here to say something about the poster, and that I presented on October 12, 2025.</p>
+          <p class="muted">Poster presented October 12, 2025. Click below to view or download.</p>
           
           <div class="qr-wrap">
             <div id="qrcode"></div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
-              <a href="CourtClarityPoster.pdf" target="_blank" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download Poster (PDF)</a>
+              <a href="poster.pdf" target="_blank" class="btn" style="background:#fff;border:1px solid #ddd;color:#222">Download Poster (PDF)</a>
             </div>
           </div>
-
+        </div>
 
         <div class="card" style="margin-top:16px;background:var(--accent-soft)">
           <h3 style="margin-top:0;color:var(--accent)">Contact</h3>
@@ -157,36 +154,15 @@
     }
 
     const SITE_URL = 'https://your-username.github.io/courtclarity';
-    document.getElementById('siteUrl').textContent = SITE_URL;
     document.getElementById('qrcode').appendChild(makeQRCode(SITE_URL, 220));
-
-    document.getElementById('downloadQr').addEventListener('click', async function(){
-      const url = `https://chart.googleapis.com/chart?cht=qr&chs=440x440&chl=${encodeURIComponent(SITE_URL)}&chld=L|1`;
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'courtclarity-qr.png';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    });
 
     const updates = [
       {when:'Sep 18, 2025', text:'Initial poster & GitHub Pages site live (placeholder content).'},
       {when:'Oct 01, 2025', text:'Begin fieldwork in Louisiana: participant recruitment & pilot testing.'},
       {when:'Oct 20, 2025', text:'Preliminary analysis and app UX iteration.'}
     ];
-    const uEl = document.getElementById('updatesList');
-    updates.forEach((u,i)=>{
-      const div = document.createElement('div'); div.className='update';
-      div.style.animation = `fadeInUp 0.6s ease ${i*0.2}s forwards`;
-      div.style.opacity = 0;
-      div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:flex-start"><div style="max-width:74%"><div style=\"font-weight:600\">${u.text}</div><div class=\"muted\" style=\"margin-top:6px\">${u.when}</div></div></div>`;
-      uEl.appendChild(div);
-    });
-
-    document.getElementById('appBtn').href = 'https://apps.apple.com/placeholder';
-    document.getElementById('mailingLink').href = 'https://docs.google.com/forms/d/e/1FAIpQLSfJ6zE15yjWxiVAIlWrsYSiohaYg0SyULwoJEn38GfcibFWkw/viewform?usp=header';
-    document.getElementById('feedbackLink').href = 'https://docs.google.com/forms/d/e/1FAIpQLScbpXkPSTIDe14hnyTlv1CKERtNOZgNf1UHE6RBr6lmT0IFRw/viewform?usp=header';
+    // Add updates list if needed in HTML
   </script>
 </body>
 </html>
+
